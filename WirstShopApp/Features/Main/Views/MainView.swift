@@ -7,18 +7,39 @@
 
 import SwiftUI
 
+struct WatchModel {
+    let name: String
+    let sizeDescription: String
+    let price: String
+    let smallImageName: String
+    let bigImageName: String
+}
+
+struct DataSource {
+    static let models = [
+        WatchModel(name: "ORMOUS", sizeDescription: "White, size L", price: "249", smallImageName: "watch1", bigImageName: "ormous"),
+        WatchModel(name: "HISAKO", sizeDescription: "Black, size M", price: "329", smallImageName: "watch2", bigImageName: "hisako")
+    ]
+}
+
 struct MainView: View {
     var body: some View {
         GeometryReader { reader in
             VStack() {
                 CustomNavigationView(title: "Watches")
                     .padding(.bottom, 16)
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack {
-                            WatchCollectionListItem(imageName: "watch1", title: "ORMOUS", price: "249", screenWidth: reader.size.width)
+                            ForEach(0..<DataSource.models.count) { index in
+                                let model = DataSource.models[index]
+                                WatchCollectionListItem(imageName: model.smallImageName,
+                                                        title: model.name,
+                                                        price: model.price,
+                                                        screenWidth: reader.size.width)
+                                    .padding(.trailing, index == DataSource.models.count - 1 ? 30 : 0)
+                            }
                         }
-                        .frame(height: (reader.size.width * 0.75) * 1.14)
                     }
                     .padding(.bottom, 50)
                     

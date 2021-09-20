@@ -17,7 +17,8 @@ struct WatchCollectionListItem: View {
     var body: some View {
         ZStack {
             Image(imageName)
-                .resizable(capInsets: /*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/, resizingMode: .stretch)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
             LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .center, endPoint: .bottom)
             
             HStack {
