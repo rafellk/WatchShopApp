@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5712152526F8CA3500C84A0A /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712152426F8CA3500C84A0A /* CustomNavigationView.swift */; };
 		57B0FBAD26F8C5740005EE0F /* WirstShopAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B0FBAC26F8C5740005EE0F /* WirstShopAppApp.swift */; };
 		57B0FBAF26F8C5740005EE0F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B0FBAE26F8C5740005EE0F /* MainView.swift */; };
 		57B0FBB126F8C5750005EE0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B0FBB026F8C5750005EE0F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5712152426F8CA3500C84A0A /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		57B0FBA926F8C5740005EE0F /* WirstShopApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WirstShopApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B0FBAC26F8C5740005EE0F /* WirstShopAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirstShopAppApp.swift; sourceTree = "<group>"; };
 		57B0FBAE26F8C5740005EE0F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -33,6 +35,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5712152026F8C9F700C84A0A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				57B0FBAE26F8C5740005EE0F /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5712152126F8CA0000C84A0A /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				5712152226F8CA1600C84A0A /* Common */,
+				5712152026F8C9F700C84A0A /* Main */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		5712152226F8CA1600C84A0A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5712152326F8CA2400C84A0A /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5712152326F8CA2400C84A0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5712152426F8CA3500C84A0A /* CustomNavigationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		57B0FBA026F8C5740005EE0F = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +87,8 @@
 		57B0FBAB26F8C5740005EE0F /* WirstShopApp */ = {
 			isa = PBXGroup;
 			children = (
+				5712152126F8CA0000C84A0A /* Features */,
 				57B0FBAC26F8C5740005EE0F /* WirstShopAppApp.swift */,
-				57B0FBAE26F8C5740005EE0F /* MainView.swift */,
 				57B0FBB026F8C5750005EE0F /* Assets.xcassets */,
 				57B0FBB526F8C5750005EE0F /* Info.plist */,
 				57B0FBB226F8C5750005EE0F /* Preview Content */,
@@ -138,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5712152526F8CA3500C84A0A /* CustomNavigationView.swift in Sources */,
 				57B0FBAF26F8C5740005EE0F /* MainView.swift in Sources */,
 				57B0FBAD26F8C5740005EE0F /* WirstShopAppApp.swift in Sources */,
 			);
