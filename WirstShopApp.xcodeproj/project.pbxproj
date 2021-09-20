@@ -17,6 +17,8 @@
 		57B0FBAF26F8C5740005EE0F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B0FBAE26F8C5740005EE0F /* MainView.swift */; };
 		57B0FBB126F8C5750005EE0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B0FBB026F8C5750005EE0F /* Assets.xcassets */; };
 		57B0FBB426F8C5750005EE0F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B0FBB326F8C5750005EE0F /* Preview Assets.xcassets */; };
+		57D8D8E626F94FE800F77852 /* WatchCollectionListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8D8E526F94FE800F77852 /* WatchCollectionListItem.swift */; };
+		57D8D8E826F952BD00F77852 /* WatchListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8D8E726F952BD00F77852 /* WatchListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		57B0FBB026F8C5750005EE0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B0FBB326F8C5750005EE0F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57B0FBB526F8C5750005EE0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57D8D8E526F94FE800F77852 /* WatchCollectionListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCollectionListItem.swift; sourceTree = "<group>"; };
+		57D8D8E726F952BD00F77852 /* WatchListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,7 @@
 		5712152026F8C9F700C84A0A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				57B0FBAE26F8C5740005EE0F /* MainView.swift */,
+				57D8D8E426F94FD800F77852 /* Views */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -127,6 +131,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		57D8D8E426F94FD800F77852 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57B0FBAE26F8C5740005EE0F /* MainView.swift */,
+				57D8D8E526F94FE800F77852 /* WatchCollectionListItem.swift */,
+				57D8D8E726F952BD00F77852 /* WatchListItem.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,9 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D8D8E626F94FE800F77852 /* WatchCollectionListItem.swift in Sources */,
 				5712152E26F8CCB200C84A0A /* Fonts.swift in Sources */,
 				5712152526F8CA3500C84A0A /* CustomNavigationView.swift in Sources */,
 				57B0FBAF26F8C5740005EE0F /* MainView.swift in Sources */,
+				57D8D8E826F952BD00F77852 /* WatchListItem.swift in Sources */,
 				57B0FBAD26F8C5740005EE0F /* WirstShopAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

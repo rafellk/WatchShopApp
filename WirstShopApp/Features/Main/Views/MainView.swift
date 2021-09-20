@@ -16,12 +16,7 @@ struct MainView: View {
                 ScrollView {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack {
-                            Image("watch1")
-                                .frame(width: reader.size.width * 0.75)
-                                .padding(.leading, 30)
-                            Image("watch2")
-                                .frame(width: reader.size.width * 0.75)
-                                .padding(.leading, 30)
+                            WatchCollectionListItem(imageName: "watch1", title: "ORMOUS", price: "249", screenWidth: reader.size.width)
                         }
                         .frame(height: (reader.size.width * 0.75) * 1.14)
                     }
@@ -44,7 +39,7 @@ struct MainView: View {
                     .padding(.horizontal, 30)
                 }
             }
-        }
+        } 
     }
 }
 
@@ -56,34 +51,5 @@ struct ContentView_Previews: PreviewProvider {
             MainView()
                 .previewDevice("iPhone 8")
         }
-    }
-}
-
-struct WatchListItem: View {
-    
-    let imageName: String
-    let title: String
-    let subtitle: String
-    let price: String
-    
-    var body: some View {
-        HStack {
-            Image(imageName)
-                .resizable()
-                .frame(width: 93, height: 93)
-                .padding(8)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title)
-                    .font(.custom(Fonts.metropolisMedium.rawValue, size: 17))
-                Text(subtitle)
-                    .font(.custom(Fonts.metropolisBook.rawValue, size: 13))
-            }
-            .padding(.leading, 12)
-            Spacer()
-            Text("$\(price)")
-                .font(.custom(Fonts.metropolisLight.rawValue, size: 24))
-                .padding(.trailing, 8)
-        }
-        .background(Color("watch_item_background"))
     }
 }
