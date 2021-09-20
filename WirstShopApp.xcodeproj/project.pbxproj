@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5712152526F8CA3500C84A0A /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712152426F8CA3500C84A0A /* CustomNavigationView.swift */; };
+		5712152A26F8CC5900C84A0A /* Metropolis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5712152726F8CC5900C84A0A /* Metropolis-Medium.otf */; };
+		5712152B26F8CC5900C84A0A /* Metropolis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5712152826F8CC5900C84A0A /* Metropolis-Light.otf */; };
+		5712152C26F8CC5900C84A0A /* Metropolis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5712152926F8CC5900C84A0A /* Metropolis-Regular.otf */; };
+		5712152E26F8CCB200C84A0A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712152D26F8CCB200C84A0A /* Fonts.swift */; };
 		57B0FBAD26F8C5740005EE0F /* WirstShopAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B0FBAC26F8C5740005EE0F /* WirstShopAppApp.swift */; };
 		57B0FBAF26F8C5740005EE0F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B0FBAE26F8C5740005EE0F /* MainView.swift */; };
 		57B0FBB126F8C5750005EE0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B0FBB026F8C5750005EE0F /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 
 /* Begin PBXFileReference section */
 		5712152426F8CA3500C84A0A /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
+		5712152726F8CC5900C84A0A /* Metropolis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-Medium.otf"; path = "../../../../../Downloads/Metropolis/Metropolis-Medium.otf"; sourceTree = "<group>"; };
+		5712152826F8CC5900C84A0A /* Metropolis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-Light.otf"; path = "../../../../../Downloads/Metropolis/Metropolis-Light.otf"; sourceTree = "<group>"; };
+		5712152926F8CC5900C84A0A /* Metropolis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-Regular.otf"; path = "../../../../../Downloads/Metropolis/Metropolis-Regular.otf"; sourceTree = "<group>"; };
+		5712152D26F8CCB200C84A0A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		57B0FBA926F8C5740005EE0F /* WirstShopApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WirstShopApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B0FBAC26F8C5740005EE0F /* WirstShopAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirstShopAppApp.swift; sourceTree = "<group>"; };
 		57B0FBAE26F8C5740005EE0F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -68,6 +76,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5712152626F8CBA200C84A0A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5712152826F8CC5900C84A0A /* Metropolis-Light.otf */,
+				5712152726F8CC5900C84A0A /* Metropolis-Medium.otf */,
+				5712152926F8CC5900C84A0A /* Metropolis-Regular.otf */,
+				5712152D26F8CCB200C84A0A /* Fonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		57B0FBA026F8C5740005EE0F = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +106,7 @@
 		57B0FBAB26F8C5740005EE0F /* WirstShopApp */ = {
 			isa = PBXGroup;
 			children = (
+				5712152626F8CBA200C84A0A /* Fonts */,
 				5712152126F8CA0000C84A0A /* Features */,
 				57B0FBAC26F8C5740005EE0F /* WirstShopAppApp.swift */,
 				57B0FBB026F8C5750005EE0F /* Assets.xcassets */,
@@ -161,7 +181,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5712152C26F8CC5900C84A0A /* Metropolis-Regular.otf in Resources */,
 				57B0FBB426F8C5750005EE0F /* Preview Assets.xcassets in Resources */,
+				5712152A26F8CC5900C84A0A /* Metropolis-Medium.otf in Resources */,
+				5712152B26F8CC5900C84A0A /* Metropolis-Light.otf in Resources */,
 				57B0FBB126F8C5750005EE0F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5712152E26F8CCB200C84A0A /* Fonts.swift in Sources */,
 				5712152526F8CA3500C84A0A /* CustomNavigationView.swift in Sources */,
 				57B0FBAF26F8C5740005EE0F /* MainView.swift in Sources */,
 				57B0FBAD26F8C5740005EE0F /* WirstShopAppApp.swift in Sources */,

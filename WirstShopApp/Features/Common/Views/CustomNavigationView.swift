@@ -16,6 +16,7 @@ struct CustomNavigationView: View {
             Image("menu")
             Spacer()
             Text(title)
+                .font(.custom(Fonts.metropolisBook.rawValue, size: 17))
             Spacer()
             Image("search")
         }
