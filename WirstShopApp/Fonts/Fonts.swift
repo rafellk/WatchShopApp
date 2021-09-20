@@ -11,4 +11,5 @@ enum Fonts: String {
     case metropolisLight = "Metropolis-Light"
     case metropolisMedium = "Metropolis-Medium"
     case metropolisBook = "Metropolis-Regular"
+    case metropolisSemiBold = "Metropolis-SemiBold"
 }
