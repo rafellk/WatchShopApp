@@ -18,7 +18,7 @@ struct WatchCollectionListItem: View {
         ZStack {
             Image(imageName)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .scaledToFill()
             LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .center, endPoint: .bottom)
             
             HStack {

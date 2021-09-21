@@ -19,6 +19,7 @@
 		57B0FBB426F8C5750005EE0F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B0FBB326F8C5750005EE0F /* Preview Assets.xcassets */; };
 		57D8D8E626F94FE800F77852 /* WatchCollectionListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8D8E526F94FE800F77852 /* WatchCollectionListItem.swift */; };
 		57D8D8E826F952BD00F77852 /* WatchListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8D8E726F952BD00F77852 /* WatchListItem.swift */; };
+		57D8D8EB26F9575F00F77852 /* WatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8D8EA26F9575F00F77852 /* WatchDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		57B0FBB526F8C5750005EE0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D8D8E526F94FE800F77852 /* WatchCollectionListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCollectionListItem.swift; sourceTree = "<group>"; };
 		57D8D8E726F952BD00F77852 /* WatchListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListItem.swift; sourceTree = "<group>"; };
+		57D8D8EA26F9575F00F77852 /* WatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		5712152126F8CA0000C84A0A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				57D8D8E926F9575500F77852 /* WatchDetailView */,
 				5712152226F8CA1600C84A0A /* Common */,
 				5712152026F8C9F700C84A0A /* Main */,
 			);
@@ -141,6 +144,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		57D8D8E926F9575500F77852 /* WatchDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				57D8D8EA26F9575F00F77852 /* WatchDetailView.swift */,
+			);
+			path = WatchDetailView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,6 +230,7 @@
 				5712152526F8CA3500C84A0A /* CustomNavigationView.swift in Sources */,
 				57B0FBAF26F8C5740005EE0F /* MainView.swift in Sources */,
 				57D8D8E826F952BD00F77852 /* WatchListItem.swift in Sources */,
+				57D8D8EB26F9575F00F77852 /* WatchDetailView.swift in Sources */,
 				57B0FBAD26F8C5740005EE0F /* WirstShopAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
