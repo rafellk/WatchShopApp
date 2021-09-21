@@ -9,10 +9,14 @@ import SwiftUI
 
 struct WatchDetailView: View {
     
-    let model: WatchModel
+    var model: WatchModel
     let namespace: Namespace.ID
+    @State var animation = false
+    @Binding var hero: Bool
+    @State var isLeaving = false
     
     var body: some View {
+        ZStack {
             VStack(alignment: .leading) {
                 Image(model.bigImageName)
                     .resizable()
@@ -53,9 +57,38 @@ struct WatchDetailView: View {
                     }
                     .padding(.bottom, 30)
                 }
+                .opacity(animation ? 1 : 0)
                 .padding(.horizontal, 30)
+                .animation(.easeInOut(duration: isLeaving ? 0.5 : 1).delay(isLeaving ? 0 : 0.5))
             }
-        .ignoresSafeArea(.container, edges: .top)
+            .ignoresSafeArea(.container, edges: .top)
+            .onAppear(perform: {
+                withAnimation {
+                    animation = true
+                }
+            })
+            VStack() {
+                HStack {
+                    Image(systemName: "chevron.left")
+                        .frame(width: 24, height: 24)
+                        .padding(.leading, 16)
+                    Spacer()
+                }
+                Spacer()
+            }
+            .onTapGesture {
+                withAnimation {
+                    animation = false
+                    isLeaving = true
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                        hero = false
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -69,7 +102,8 @@ struct WatchDetailView_Previews: PreviewProvider {
                                               price: "249",
                                               smallImageName: "ormous",
                                               bigImageName: "watch1"),
-                            namespace: namespace)
+                            namespace: namespace,
+                            hero: .constant(true))
         }
     }
     

@@ -26,16 +26,14 @@ struct MainView: View {
     
     @Namespace var namespace
     @State var selectedModel: WatchModel?
+    @State var detailHero = false
     
     var body: some View {
-        if let model = selectedModel {
-            WatchDetailView(model: model, namespace: namespace)
-                .onTapGesture {
-                    withAnimation() {
-                        selectedModel = nil
-                    }
-                }
-        } else {
+        ZStack {
+            if detailHero, let model = selectedModel {
+                WatchDetailView(model: model, namespace: namespace, hero: $detailHero)
+            }
+            
             GeometryReader { reader in
                 VStack() {
                     CustomNavigationView(title: "Watches")
@@ -52,8 +50,9 @@ struct MainView: View {
                                                             namespace: namespace)
                                         .padding(.trailing, index == DataSource.models.count - 1 ? 30 : 0)
                                         .onTapGesture {
-                                            withAnimation() {
+                                            withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
                                                 selectedModel = model
+                                                detailHero = true
                                             }
                                         }
                                 }
@@ -82,6 +81,7 @@ struct MainView: View {
                     }
                 }
             }
+            .opacity(detailHero ? 0 : 1)
         }
     }
 }
