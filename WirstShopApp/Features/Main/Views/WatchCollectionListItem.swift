@@ -13,12 +13,14 @@ struct WatchCollectionListItem: View {
     let title: String
     let price: String
     let screenWidth: CGFloat
+    let namespace: Namespace.ID
     
     var body: some View {
         ZStack {
             Image(imageName)
                 .resizable()
                 .scaledToFill()
+                .matchedGeometryEffect(id: title, in: namespace)
             LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .center, endPoint: .bottom)
             
             HStack {
@@ -37,11 +39,5 @@ struct WatchCollectionListItem: View {
         }
         .frame(width: screenWidth * 0.75)
         .padding(.leading, 30)
-    }
-}
-
-struct WatchCollectionListItem_Previews: PreviewProvider {
-    static var previews: some View {
-        WatchCollectionListItem(imageName: "watch1", title: "ORMOUR", price: "249", screenWidth: UIScreen.main.bounds.size.width)
     }
 }

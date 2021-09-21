@@ -23,8 +23,19 @@ struct DataSource {
 }
 
 struct MainView: View {
+    
+    @Namespace var namespace
+    @State var selectedModel: WatchModel?
+    
     var body: some View {
-        NavigationView {
+        if let model = selectedModel {
+            WatchDetailView(model: model, namespace: namespace)
+                .onTapGesture {
+                    withAnimation() {
+                        selectedModel = nil
+                    }
+                }
+        } else {
             GeometryReader { reader in
                 VStack() {
                     CustomNavigationView(title: "Watches")
@@ -34,14 +45,17 @@ struct MainView: View {
                             LazyHStack {
                                 ForEach(0..<DataSource.models.count) { index in
                                     let model = DataSource.models[index]
-                                    NavigationLink(destination: WatchDetailView(model: model)) {
-                                        WatchCollectionListItem(imageName: model.bigImageName,
-                                                                title: model.name,
-                                                                price: model.price,
-                                                                screenWidth: reader.size.width)
-                                            .padding(.trailing, index == DataSource.models.count - 1 ? 30 : 0)
-                                    }
-                                    .buttonStyle(PlainButtonStyle())
+                                    WatchCollectionListItem(imageName: model.bigImageName,
+                                                            title: model.name,
+                                                            price: model.price,
+                                                            screenWidth: reader.size.width,
+                                                            namespace: namespace)
+                                        .padding(.trailing, index == DataSource.models.count - 1 ? 30 : 0)
+                                        .onTapGesture {
+                                            withAnimation() {
+                                                selectedModel = model
+                                            }
+                                        }
                                 }
                             }
                         }
@@ -68,8 +82,7 @@ struct MainView: View {
                     }
                 }
             }
-            .navigationBarHidden(true)
-        } 
+        }
     }
 }
 

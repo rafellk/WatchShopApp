@@ -10,12 +10,14 @@ import SwiftUI
 struct WatchDetailView: View {
     
     let model: WatchModel
+    let namespace: Namespace.ID
     
     var body: some View {
             VStack(alignment: .leading) {
                 Image(model.bigImageName)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .scaledToFill()
+                    .matchedGeometryEffect(id: model.name, in: namespace)
                     .frame(minWidth: UIScreen.main.bounds.size.width, minHeight: 100)
                     .clipped()
                     .padding(.bottom, 38)
@@ -58,12 +60,21 @@ struct WatchDetailView: View {
 }
 
 struct WatchDetailView_Previews: PreviewProvider {
+    
+    struct ContainerView: View {
+        @Namespace var namespace
+        var body: some View {
+            WatchDetailView(model: WatchModel(name: "ORMOUS",
+                                              sizeDescription: "White, size L",
+                                              price: "249",
+                                              smallImageName: "ormous",
+                                              bigImageName: "watch1"),
+                            namespace: namespace)
+        }
+    }
+    
     static var previews: some View {
-        WatchDetailView(model: WatchModel(name: "ORMOUS",
-                                          sizeDescription: "White, size L",
-                                          price: "249",
-                                          smallImageName: "ormous",
-                                          bigImageName: "watch1"))
+        ContainerView()
             .previewDevice("iPhone SE (2nd generation)")
     }
 }
