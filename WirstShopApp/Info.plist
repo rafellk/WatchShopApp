@@ -9,6 +9,8 @@
 		<string>Metropolis-Medium.otf</string>
 		<string>Metropolis-Regular.otf</string>
 	</array>
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
