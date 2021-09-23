@@ -13,7 +13,6 @@ struct WatchDetailView: View {
     let namespace: Namespace.ID
     @State var animation = false
     @Binding var hero: Bool
-    @State var isLeaving = false
     
     var body: some View {
         ZStack {
@@ -22,49 +21,52 @@ struct WatchDetailView: View {
                     .resizable()
                     .scaledToFill()
                     .matchedGeometryEffect(id: model.name, in: namespace)
-                    .frame(minWidth: UIScreen.main.bounds.size.width, minHeight: 100)
+                    .frame(maxHeight: UIScreen.main.bounds.size.height * 0.61)
                     .clipped()
                     .padding(.bottom, 38)
-                Spacer()
                 
-                Group {
-                    Text(model.name)
-                        .font(.custom(Fonts.metropolisMedium.rawValue, size: 24))
-                        .padding(.bottom, 12)
-                    Text("$\(model.price)")
-                        .font(.custom(Fonts.metropolisLight.rawValue, size: 24))
-                        .padding(.bottom, 20)
-                    Text("Named after asteroid 6 0 9 4 (h i s a k o) is currently travelling through time and space.")
-                        .font(.custom(Fonts.metropolisLight.rawValue, size: 16))
-                        .padding(.bottom, 35)
-                    HStack {
-                        Button(action: {}, label: {
-                            Text("BUY NOW")
-                                .font(.custom(Fonts.metropolisMedium.rawValue, size: 14))
-                        })
-                        .padding(.vertical, 14)
-                        .frame(maxWidth: .infinity, minHeight: 48)
-                        .background(Color("buy_now_button_background"))
-                        .foregroundColor(.white)
-                        
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 48, height: 48)
+                if animation {
+                    Group {
+                        Text(model.name)
+                            .font(.custom(Fonts.metropolisMedium.rawValue, size: 24))
+                            .padding(.bottom, 12)
+                        Text("$\(model.price)")
+                            .font(.custom(Fonts.metropolisLight.rawValue, size: 24))
+                            .padding(.bottom, 20)
+                        Text("Named after asteroid 6 0 9 4 (h i s a k o) is currently travelling through time and space.")
+                            .font(.custom(Fonts.metropolisLight.rawValue, size: 16))
+                            .padding(.bottom, 35)
+                        HStack {
+                            Button(action: {}, label: {
+                                Text("BUY NOW")
+                                    .font(.custom(Fonts.metropolisMedium.rawValue, size: 14))
+                            })
+                                .padding(.vertical, 14)
+                                .frame(maxWidth: .infinity, minHeight: 48)
+                                .background(Color("buy_now_button_background"))
                                 .foregroundColor(.white)
-                                .border(Color.gray, width: 0.2)
-                            Image(systemName: "heart")
+                            
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: 48, height: 48)
+                                    .foregroundColor(.white)
+                                    .border(Color.gray, width: 0.2)
+                                Image(systemName: "heart")
+                            }
                         }
+                        .padding(.bottom, 30)
                     }
-                    .padding(.bottom, 30)
+                    .padding(.horizontal, 30)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
-                .opacity(animation ? 1 : 0)
-                .padding(.horizontal, 30)
-                .animation(.easeInOut(duration: isLeaving ? 0.5 : 1).delay(isLeaving ? 0 : 0.5))
+                Spacer()
             }
             .ignoresSafeArea(.container, edges: .top)
             .onAppear(perform: {
-                withAnimation {
-                    animation = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    withAnimation(.easeInOut) {
+                        animation = true
+                    }
                 }
             })
             VStack() {
@@ -79,7 +81,6 @@ struct WatchDetailView: View {
             .onTapGesture {
                 withAnimation {
                     animation = false
-                    isLeaving = true
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
