@@ -69,11 +69,13 @@ struct WatchDetailView: View {
                     }
                 }
             })
+        }
+        if animation {
             VStack() {
                 HStack {
                     Image(systemName: "chevron.left")
                         .frame(width: 24, height: 24)
-                        .padding(.leading, 16)
+                        .padding([.leading, .top], 16)
                     Spacer()
                 }
                 Spacer()
